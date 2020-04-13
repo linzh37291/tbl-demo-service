@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite" parallel="classes" thread-count="1">
+
+    <test verbose="1" preserve-order="true" name="SequenceTest">
+        <groups>
+            <define name="a" >
+                <include name="a"/>
+            </define>
+            <define name="b">
+                <include name="b"/>
+            </define>
+            <define name="getOrder">
+                <include name="getOrder"/>
+            </define>
+            <define name="all">
+                <include name="a"/>
+                <include name="b"/>
+            </define>
+            <run>
+                <include name="getOrder"/> 
+                <!-- <include name="all"/>-->
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ligeit.supply.rules.SequenceTest" />
+        </classes>
+    </test>
+
+</suite>
